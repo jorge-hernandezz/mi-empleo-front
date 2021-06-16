@@ -20,14 +20,14 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Inicio </a>
+                        <a class="nav-link" href="MainMenu.aspx">Inicio </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Perfil</a>
+                        <a class="nav-link" href="Perfil.aspx">Perfil</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Ayuda</a>
-                    </li>
+                    <li class="nav-item">   
+                        <a class="nav-link" href="Ayuda.aspx">Ayuda</a>
+                    </li>                    
                 </ul>
             </div>
         </nav>
@@ -38,38 +38,38 @@
                     <h1 style="color: white;">Mi Empleo</h1>
                     <p class="text-chido">Busca trabajo, empleate y oportunidades</p>
                     <div class="col-3">
-                        <asp:TextBox runat="server" placeholder="Trabajo, Descripcion" CssClass="button" />
+                        <asp:TextBox runat="server" placeholder="Trabajo, Descripcion" CssClass="button" ID="TBDesc"/>
                     </div>
 
                     <div class="col-3">
-                        <asp:DropDownList runat="server" placeholder="Experiencia" CssClass="button">
-                            <asp:ListItem Selected="True" Value="White"> 1-3 Años </asp:ListItem>
-                            <asp:ListItem Value="Silver"> 3-5 Años  </asp:ListItem>
-                            <asp:ListItem Value="DarkGray">5-8 Años  </asp:ListItem>
-                            <asp:ListItem Value="Khaki"> 8+ Años  </asp:ListItem>
+                        <asp:DropDownList runat="server" placeholder="Experiencia" CssClass="button" ID="DDExp">
+                            <asp:ListItem Selected="True" Value="1"> 1-3 Años </asp:ListItem>
+                            <asp:ListItem Value="3"> 3-5 Años  </asp:ListItem>
+                            <asp:ListItem Value="5">5-8 Años  </asp:ListItem>
+                            <asp:ListItem Value="8"> 8+ Años  </asp:ListItem>
+                        </asp:DropDownList>
+                    </div>
+
+                    <div class="col-3">
+                        <asp:DropDownList runat="server" CssClass="button" ID="DDPlace">
+                            <asp:ListItem Selected="True" Value="0"> Lugar </asp:ListItem>
+                            <asp:ListItem Value="1"> Delicias </asp:ListItem>
+                            <asp:ListItem Value="2">Parral  </asp:ListItem>
+                            <asp:ListItem Value="3"> Meoqui  </asp:ListItem>
+                            <asp:ListItem Value="4"> Camargo  </asp:ListItem>
+                            <asp:ListItem Value="5"> Rosales  </asp:ListItem>
                         </asp:DropDownList>
 
                     </div>
                     <div class="col-3">
-                        <asp:DropDownList runat="server" CssClass="button">
-                            <asp:ListItem Selected="True" Value="White"> Lugar </asp:ListItem>
-                            <asp:ListItem Value="Silver"> Delicias </asp:ListItem>
-                            <asp:ListItem Value="DarkGray">Parral  </asp:ListItem>
-                            <asp:ListItem Value="Khaki"> Meoqui  </asp:ListItem>
-                            <asp:ListItem Value="Khaki"> Camargo  </asp:ListItem>
-                            <asp:ListItem Value="Khaki"> Rosales  </asp:ListItem>
-                        </asp:DropDownList>
-
-                    </div>
-                    <div class="col-3">
-                        <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary button2" />
+                        <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary button2" ID="BTNBuscar" OnClick="BTNBuscar_Click"/>
                     </div>                    
                     <div id="carro" style="padding-top: 180px;">
                         <div class="text-center" style="padding-bottom:20px;">
                             <asp:Label Text="Trabajos que pueden interesarte" runat="server" CssClass="text-chido"/>
                         </div>                        
                         <div class="container">                            
-                            <div class="card">
+                            <a class="card">
                                 <h3 class="title">Desarrollo</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>
@@ -78,8 +78,8 @@
                                 <div class="circle">
                                     <i class="fas fa-code fa-5x"></i>
                                 </div>
-                            </div>
-                            <div class="card">
+                            </a>
+                            <a class="card">
                                 <h3 class="title">Tecnologia</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>
@@ -88,8 +88,8 @@
                                 <div class="circle">
                                     <i class="fas fa-laptop fa-5x"></i>
                                 </div>
-                            </div>
-                            <div class="card">
+                            </a>
+                            <a class="card">
                                 <h3 class="title">Medicina</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>
@@ -98,8 +98,8 @@
                                 <div class="circle">
                                     <i class="fas fa-notes-medical fa-7x"></i>
                                 </div>
-                            </div>
-                            <div class="card">
+                            </a>
+                            <a class="card" href="Publicaciones.aspx">
                                 <h3 class="title">Todos los Trabajos</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>
@@ -108,7 +108,7 @@
                                 <div class="circle">
                                     <i class="fas fa-list-ul fa-7x"></i>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>
                 </div>

@@ -11,7 +11,7 @@ namespace Mi_Empleo2
 {
 
 
-    public partial class MainMenu
+    public partial class User
     {
 
         /// <summary>
@@ -24,39 +24,57 @@ namespace Mi_Empleo2
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Control TBDesc.
+        /// Control Imagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TBDesc;
+        protected global::System.Web.UI.WebControls.Image Imagen;
 
         /// <summary>
-        /// Control DDExp.
+        /// Control TBNombre.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDExp;
+        protected global::System.Web.UI.WebControls.Label TBNombre;
 
         /// <summary>
-        /// Control DDPlace.
+        /// Control TBCarrera.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DDPlace;
+        protected global::System.Web.UI.WebControls.Label TBCarrera;
 
         /// <summary>
-        /// Control BTNBuscar.
+        /// Control Nombre2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTNBuscar;
+        protected global::System.Web.UI.WebControls.Label Nombre2;
+
+        /// <summary>
+        /// Control TBCarrera2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label TBCarrera2;
+
+        /// <summary>
+        /// Control LBExp.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBExp;
     }
 }

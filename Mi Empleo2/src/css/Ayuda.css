@@ -1,0 +1,57 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    font-family: 'Poppins' !important;
+}
+
+.efectss {
+    position: relative;
+    animation: mymove;
+    animation-duration: 2s;
+}
+
+@keyframes mymove {
+    from {
+        right: 200px;
+    }
+
+    to {
+        right: 0px;
+    }
+}
+
+.efects2 {
+    position: relative;
+    animation: mymove2;
+    animation-duration: 4s;
+}
+
+@keyframes mymove2 {
+    from {
+        left: 200px;
+    }
+
+    to {
+        left: 0px;
+    }
+}
+
+.imagen2 {
+    width: 500px !important;
+    height: 400px !important;
+}
+
+.fondo {
+    background-color: black;
+}
+
+.imagen3 {
+    width: 500px !important;
+    height: 500px !important;
+}
+
+.button2 {
+    width: 300px;
+    height: 60px;
+    border-radius: 100px !important;
+}

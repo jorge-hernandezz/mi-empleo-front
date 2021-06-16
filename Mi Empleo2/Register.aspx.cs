@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -41,7 +42,7 @@ namespace Mi_Empleo2
         public async Task<RegisterResponseModel> Registro(string username, string password, string first_name, string last_name, string email)
         {
             RegisterResponseModel register = new RegisterResponseModel();
-            string uri = "https://investigacion.rafaelaguirre1.repl.co/user/register/";
+            string uri = ConfigurationManager.AppSettings["production"] + "users/register/";
             HttpClient httpClient = new HttpClient();
             RegistroModel registro = new RegistroModel();
             registro.username = username;

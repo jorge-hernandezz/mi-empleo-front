@@ -23,7 +23,7 @@ namespace Mi_Empleo2
         public async Task<Token> login(string user, string password)
         {
             Token serviceResult = new Token();
-            string uri = "https://investigacion.rafaelaguirre1.repl.co/user/token/login";
+            string uri = ConfigurationManager.AppSettings["production"] +"users/login/";
             HttpClient httpClient = new HttpClient();
             LoginModel loginCompanyRequest = new LoginModel();
             loginCompanyRequest.username = user;
