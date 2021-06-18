@@ -69,7 +69,7 @@
                             <asp:Label Text="Trabajos que pueden interesarte" runat="server" CssClass="text-chido"/>
                         </div>                        
                         <div class="container">                            
-                            <a class="card">
+                            <asp:LinkButton runat="server" ID="btndes" OnClick="btndes_Click" class="card">
                                 <h3 class="title">Desarrollo</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>
@@ -78,8 +78,8 @@
                                 <div class="circle">
                                     <i class="fas fa-code fa-5x"></i>
                                 </div>
-                            </a>
-                            <a class="card">
+                            </asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="btntec" OnClick="btntec_Click" class="card">
                                 <h3 class="title">Tecnologia</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>
@@ -88,8 +88,8 @@
                                 <div class="circle">
                                     <i class="fas fa-laptop fa-5x"></i>
                                 </div>
-                            </a>
-                            <a class="card">
+                            </asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="btnmedi" OnClick="btnmedi_Click" class="card">
                                 <h3 class="title">Medicina</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>
@@ -98,8 +98,8 @@
                                 <div class="circle">
                                     <i class="fas fa-notes-medical fa-7x"></i>
                                 </div>
-                            </a>
-                            <a class="card" href="Publicaciones.aspx">
+                            </asp:LinkButton>
+                            <asp:LinkButton runat="server" ID="btnall" OnClick="btnall_Click" class="card" >
                                 <h3 class="title">Todos los Trabajos</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>
@@ -108,7 +108,7 @@
                                 <div class="circle">
                                     <i class="fas fa-list-ul fa-7x"></i>
                                 </div>
-                            </a>
+                            </asp:LinkButton>
                         </div>
                     </div>
                 </div>

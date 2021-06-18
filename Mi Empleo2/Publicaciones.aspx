@@ -45,12 +45,12 @@
                     <div class="course-preview">
                         <h6>Ingeniero</h6>
                         <h2><%= x.first_name%> <%= x.last_name%></h2>
-
                     </div>
                     <div class="course-info">
                         <h6>Especialidad</h6>
                         <h2><%= x.profession %></h2>
-                        <button class="btn2">Continuar</button>
+                        <asp:Label Text="<%= x.id%>" Visible="false" ID="lbuser" runat="server" />
+                        <asp:LinkButton runat="server" OnClick="btnuser_Click" ID="btnuser" class="btn2">Continuar</asp:LinkButton>
                     </div>
                 </div>
             </div>

@@ -95,5 +95,29 @@ namespace Mi_Empleo2
             }
             return serviceResult;
         }
+
+        protected void btndes_Click(object sender, EventArgs e)
+        {
+            Session["DesarrolloUsers"] = 1;
+            Response.Redirect("Publicaciones.aspx");
+        }
+
+        protected void btntec_Click(object sender, EventArgs e)
+        {
+            Session["TecUsers"] = 2;
+            Response.Redirect("Publicaciones.aspx");
+        }
+
+        protected void btnall_Click(object sender, EventArgs e)
+        {
+            Session["TodosUsers"] = 4;
+            Response.Redirect("Publicaciones.aspx");
+        }
+
+        protected void btnmedi_Click(object sender, EventArgs e)
+        {
+            Session["MedicinaUsers"] = 3;
+            Response.Redirect("Publicaciones.aspx");
+        }
     }
 }

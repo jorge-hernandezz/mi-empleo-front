@@ -13,7 +13,7 @@
         <div class="container" id="form">
             <div class="pb-3">
                 <div class="form-container sign-up-container">
-                    <form action="#">
+                    
                         <h1>Create Account</h1>
                         <div class="social-container">
                             <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -25,7 +25,7 @@
                         <input type="email" placeholder="Email" />
                         <input type="password" placeholder="Password" />
                         <button>Sign Up</button>
-                    </form>
+                  
                 </div>
                 <div class="form-container sign-in-container">
                     <div class="form">
