@@ -36,27 +36,27 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-
-            <% foreach (var x in listUsers)
-                { %>
-            <div class="courses-container">
-                <div class="course">
-                    <div class="course-preview">
-                        <h6>Ingeniero</h6>
-                        <h2><%= x.first_name%> <%= x.last_name%></h2>
-                    </div>
-                    <div class="course-info">
-                        <h6>Especialidad</h6>
-                        <h2><%= x.profession %></h2>
-                        <asp:Label Text="<%= x.id%>" Visible="false" ID="lbuser" runat="server" />
-                        <asp:LinkButton runat="server" OnClick="btnuser_Click" ID="btnuser" class="btn2">Continuar</asp:LinkButton>
-                    </div>
+    </form>
+    <div class="container">
+        <% foreach (var x in listUsers)
+            { %>
+        <div class="courses-container">
+            <div class="course">
+                <div class="course-preview">
+                    <h6>Ingeniero</h6>
+                    <h2><%= x.first_name%> <%= x.last_name%></h2>
+                </div>
+                <div class="course-info">
+                    <h6>Especialidad</h6>
+                    <h2><%= x.profession %></h2>
+                    <form action="/User.aspx">
+                        <input type="text" id="user" name="user" hidden="hidden" value="<%= x.id %>" />
+                        <button type="submit" class="btn2">Continuar</button>
+                    </form>
                 </div>
             </div>
-            <% } %>
-
         </div>
-    </form>
+        <% } %>
+    </div>
 </body>
 </html>

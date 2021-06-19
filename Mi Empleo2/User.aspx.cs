@@ -21,24 +21,29 @@ namespace Mi_Empleo2
             {
                 Response.Redirect("Login.aspx");
             }
-            var task = Task.Run(async () => await getUser());
-            UserModel serviceResult = task.Result;
-            if (!IsPostBack)
-            {
-                TBNombre.Text = serviceResult.first_name + serviceResult.last_name;
-                Nombre2.Text = serviceResult.first_name + serviceResult.last_name;
-                TBCarrera.Text = serviceResult.profession;
-                TBCarrera2.Text = serviceResult.profession;
-                LBExp.Text = serviceResult.experience;
-                Imagen.ImageUrl = serviceResult.image;
+            if (Request.QueryString["user"] != null)
+            {                
+                string id = Request.QueryString["user"];
+                var task = Task.Run(async () => await getUser(id));
+                UserModel serviceResult = task.Result;
+                if (!IsPostBack)
+                {
+                    TBNombre.Text = serviceResult.first_name + serviceResult.last_name;
+                    Nombre2.Text = serviceResult.first_name + serviceResult.last_name;
+                    TBCarrera.Text = serviceResult.profession;
+                    TBCarrera2.Text = serviceResult.profession;
+                    LBExp.Text = serviceResult.experience;
+                    Imagen.ImageUrl = serviceResult.image;
+                }
             }
+            
         }
 
-        public async Task<UserModel> getUser()
+        public async Task<UserModel> getUser(string id)
         {
             var token = Session["token"];
             UserModel serviceResult = new UserModel();
-            string uri = ConfigurationManager.AppSettings["production"] + "users/detail/";
+            string uri = ConfigurationManager.AppSettings["production"] + "users/detail/"+ id + "/";
             HttpClient httpClient = new HttpClient();
             try
             {

@@ -33,33 +33,34 @@
     </nav>
     <form id="form1" runat="server">
         <!-- Nav -->
-
-
         <!-- Home -->
         <article id="top" class="wrapper style1">
             <div class="container">
                 <div class="row">
                     <div class="col-4 col-5-large col-12-medium">
                         <span class="image fit">
-                            <asp:Image ImageUrl="imageurl" runat="server" ID="Imagen"/>
+                            <asp:Image ImageUrl="imageurl" runat="server" ID="Imagen" />
                         </span>
                     </div>
                     <div class="col-8 col-7-large col-12-medium">
                         <header>
-                            <asp:Label Text="" runat="server" ID="TBNombre" />
-                            <br />  
-                            <asp:Label Text="" runat="server" ID="TBCarrera"/>
+                            <asp:Label Text="" runat="server" ID="TBNombre" CssClass="title1" />
+                            <br />
+                            <asp:Label Text="" runat="server" ID="TBCarrera" CssClass="title2" />
                         </header>
-                        <p>Hola! Soy 
-                        <asp:Label Text="Jorge Hernandez" runat="server" ID="Nombre2"/>
-                        <asp:Label Text="Software Development" runat="server" ID="TBCarrera2"/>
-                        con <asp:Label Text="3" runat="server" ID="LBExp"/> años de experiencia
+                        <p>
+                            Hola! Soy 
+                        <asp:Label Text="Jorge Hernandez" runat="server" ID="Nombre2" />
+                            <asp:Label Text="Software Development" runat="server" ID="TBCarrera2" />
+                            con
+                            <asp:Label Text="3" runat="server" ID="LBExp" />
+                            años de experiencia
                         especializado en 
                         <asp:Label Text="Desarrollador WEB" runat="server" />
-                        <asp:Label Text="HTML" runat="server" />
-                        <asp:Label Text="CSS" runat="server" />
-                        <asp:Label Text="Django Rest Framework" runat="server" />
-                        si estas interesado en mi descarga mi CV.
+                            <asp:Label Text="HTML" runat="server" />
+                            <asp:Label Text="CSS" runat="server" />
+                            <asp:Label Text="Django Rest Framework" runat="server" />
+                            si estas interesado en mi descarga mi CV.
                         </p>
                         <a href="#work" class="button large scrolly">Descarga CV</a>
                         <!-- <a href="#contact" class="button large scrolly">Contactame</a> -->
@@ -67,19 +68,17 @@
                 </div>
             </div>
         </article>
-
-
         <!-- Contact -->
         <article id="contact" class="wrapper style4">
             <div class="container medium">
                 <header>
                     <h2>Contacta conmigo</h2>
-                    <p>Si requieres más información sobre mi, rellena este formulario para establecer una mejor comunicación.</p>
-                    <p>!Muchas gracias!</p>
                 </header>
-                <div class="row">
-                    <div class="col-12">
-                        <form method="post" action="#">
+               <%-- <div class="row">
+                    <div class="col-12">--%>
+
+                       <%-- <p>Si requieres más información sobre mi.</p>--%>
+                        <%--<form method="post" action="#">
                             <div class="row">
                                 <div class="col-6 col-12-small">
                                     <input type="text" name="name" id="name" placeholder="Nombre" />
@@ -102,7 +101,7 @@
                                     </ul>
                                 </div>
                             </div>
-                        </form>
+                        </form>--%>
                     </div>
                     <div class="col-12">
                         <hr />
@@ -125,14 +124,14 @@
                         </ul>
                         <hr />
                     </div>
-                </div>
+                <%--</div>
                 <footer>
                     <ul id="copyright">
                         <li>&copy; Derechos Reservados</li>
                         <li>Design: <a href="http://html5up.net">SORUS</a></li>
                     </ul>
                 </footer>
-            </div>
+            </div>--%>
         </article>
 
         <!-- Scripts -->

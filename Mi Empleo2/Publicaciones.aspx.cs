@@ -56,7 +56,7 @@ namespace Mi_Empleo2
                 var task = Task.Run(async () => await getUsers());
                 listUsers = task.Result;
                 //Session["TodosUsers"] = null;
-            }            
+            }
         }
 
         public async Task<List<UsersAllModel>> getUsers()
@@ -128,11 +128,6 @@ namespace Mi_Empleo2
                 Console.WriteLine(ex);
             }
             return serviceResult;
-        }
-
-        protected void btnuser_Click(object sender, EventArgs e)
-        {
-            Session["IDUser"] = lbuser.Text;
         }
     }
 }
