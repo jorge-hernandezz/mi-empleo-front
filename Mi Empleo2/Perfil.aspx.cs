@@ -171,7 +171,41 @@ namespace Mi_Empleo2
             userModel.sites = JsonConvert.SerializeObject(sites);
             userModel.experience = TBEx.Text;
             userModel.place = DDLugar.Text;
-            var task = Task.Run(async () => await updateUser(userModel));
+
+            string[] validFileTypes = { "pdf", "doc"};
+            string ext = System.IO.Path.GetExtension(FileUpload2.PostedFile.FileName);
+            bool isValidFile = false;
+            for (int i = 0; i < validFileTypes.Length; i++)
+            {
+                if (ext == "." + validFileTypes[i])
+                {
+                    isValidFile = true;
+                    break;
+                }
+            }
+            if (!isValidFile)
+            {
+                ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Es necesario que el archivo sea PDF!"", ""error"");</script>");
+            }
+            else
+            {
+                System.IO.Stream fs = FileUpload2.PostedFile.InputStream;
+                System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
+                Byte[] bytes = br.ReadBytes((Int32)fs.Length);
+                string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
+                userModel.cv = "data:application/pdf;base64," + base64String;                
+                var task = Task.Run(async () => await updateUser(userModel));
+                bool result = task.Result;
+                if (result)
+                {
+                    ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Exitoso!"", ""Se guardo la información correctamente!"", ""success"");</script>");
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información!"", ""error"");</script>");
+                }
+                
+            }            
         }
 
         protected void recargar_Click(object sender, EventArgs e)

@@ -46,12 +46,12 @@ namespace Mi_Empleo2
                                 serviceResult = Newtonsoft.Json.JsonConvert.DeserializeObject<Token>(responseStringContent);
                                 Session["token"] = serviceResult.auth_token;
                                 serviceResult.state = true;
-
                             }
                             else
                             {
                                 Session["token"] = "";
                                 serviceResult.state = false;
+                                ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""¡Contraseña o usuario incorrecto!"", ""error"");</script>");
                             }
                         }
                     }

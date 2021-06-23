@@ -1,4 +1,5 @@
 ﻿using Mi_Empleo2.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,6 +15,7 @@ namespace Mi_Empleo2
 {
     public partial class User : System.Web.UI.Page
     {
+        public string cv = ""; 
         protected void Page_Load(object sender, EventArgs e)
         {
             var token = Session["token"];
@@ -34,6 +36,13 @@ namespace Mi_Empleo2
                     TBCarrera2.Text = serviceResult.profession;
                     LBExp.Text = serviceResult.experience;
                     Imagen.ImageUrl = serviceResult.image;
+                    SkillsModel skills = new SkillsModel();
+                    skills = JsonConvert.DeserializeObject<SkillsModel>(serviceResult.skills);
+                    lbs1.Text = skills.skill1;
+                    lbs2.Text = skills.skill2;
+                    lbs3.Text = skills.skill3;
+                    lbs4.Text = skills.skill4;
+                    cv = $@"<a href="" {serviceResult.cv} "" class=""button large scrolly"" download=""CV.pdf"">Descarga CV</a>";
                 }
             }
             

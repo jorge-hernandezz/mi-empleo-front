@@ -28,7 +28,8 @@ namespace Mi_Empleo2
         protected void BTNBuscar_Click(object sender, EventArgs e)
         {
             var task = Task.Run(async () => await findUser(TBDesc.Text, DDExp.SelectedValue, DDPlace.Text));
-            Session["MenuUsers"] = task.Result;
+            Session["MenuUsersList"] = task.Result;
+            Session["MenuUsers"] = "0";
             Response.Redirect("Publicaciones.aspx");
         }
 
@@ -98,25 +99,25 @@ namespace Mi_Empleo2
 
         protected void btndes_Click(object sender, EventArgs e)
         {
-            Session["DesarrolloUsers"] = 1;
+            Session["DesarrolloUsers"] = "1";
             Response.Redirect("Publicaciones.aspx");
         }
 
         protected void btntec_Click(object sender, EventArgs e)
         {
-            Session["TecUsers"] = 2;
+            Session["TecUsers"] = "2";
             Response.Redirect("Publicaciones.aspx");
         }
 
         protected void btnall_Click(object sender, EventArgs e)
         {
-            Session["TodosUsers"] = 4;
+            Session["TodosUsers"] = "4";
             Response.Redirect("Publicaciones.aspx");
         }
 
         protected void btnmedi_Click(object sender, EventArgs e)
         {
-            Session["MedicinaUsers"] = 3;
+            Session["MedicinaUsers"] = "3";
             Response.Redirect("Publicaciones.aspx");
         }
     }

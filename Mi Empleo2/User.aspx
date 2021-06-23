@@ -56,13 +56,14 @@
                             <asp:Label Text="3" runat="server" ID="LBExp" />
                             años de experiencia
                         especializado en 
-                        <asp:Label Text="Desarrollador WEB" runat="server" />
-                            <asp:Label Text="HTML" runat="server" />
-                            <asp:Label Text="CSS" runat="server" />
-                            <asp:Label Text="Django Rest Framework" runat="server" />
+                            <asp:Label Text="Desarrollador WEB" runat="server" ID="lbs4" />
+                            <asp:Label Text="HTML" runat="server" ID="lbs1" />
+                            <asp:Label Text="CSS" runat="server" ID="lbs2"/>
+                            <asp:Label Text="Django Rest Framework" runat="server" ID="lbs3" />
                             si estas interesado en mi descarga mi CV.
                         </p>
-                        <a href="#work" class="button large scrolly">Descarga CV</a>
+                        <%= cv %>
+                        <%--<asp:LinkButton Text="Descarga CV" ID="CV" OnClick="CV_Click" CssClass="button large scrolly" runat="server" />--%>
                         <!-- <a href="#contact" class="button large scrolly">Contactame</a> -->
                     </div>
                 </div>

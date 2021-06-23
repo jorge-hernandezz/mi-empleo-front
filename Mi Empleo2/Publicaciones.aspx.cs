@@ -25,37 +25,37 @@ namespace Mi_Empleo2
                 Response.Redirect("Login.aspx");
             }
 
-            if (Session["MenuUsers"] != null)
+            if ((string)Session["MenuUsers"] == "0")
             {
-                listUsers = (List<UsersAllModel>)Session["MenuUsers"];
-                //Session["MenuUsers"] = null;
+                listUsers = (List<UsersAllModel>)Session["MenuUsersList"];
+                Session["MenuUsers"] = "";
             }
-            else if (Session["DesarrolloUsers"] != null)
+            else if ((string)Session["DesarrolloUsers"] == "1")
             {
                 string desarrollo = "desarrollo";
                 var task = Task.Run(async () => await getUsersCategory(desarrollo));
                 listUsers = task.Result;
-                //Session["DesarrolloUsers"] = null;
+                Session["DesarrolloUsers"] = "";
             }
-            else if (Session["TecUsers"] != null)
+            else if ((string)Session["TecUsers"] == "2")
             {
                 string tecnologias = "tecnologias";
                 var task = Task.Run(async () => await getUsersCategory(tecnologias));
                 listUsers = task.Result;
-                //Session["TecUsers"] = null;
+                Session["TecUsers"] = "";
             }
-            else if (Session["MedicinaUsers"] != null)
+            else if ((string)Session["MedicinaUsers"] == "3")
             {
                 string medicina = "medicina";
                 var task = Task.Run(async () => await getUsersCategory(medicina));
                 listUsers = task.Result;
-                //Session["MedicinaUsers"] = null;
+                Session["MedicinaUsers"] = "";
             }
-            else if (Session["TodosUsers"] != null)
+            else if ((string)Session["TodosUsers"] == "4")
             {
                 var task = Task.Run(async () => await getUsers());
                 listUsers = task.Result;
-                //Session["TodosUsers"] = null;
+                Session["TodosUsers"] = "";
             }
         }
 

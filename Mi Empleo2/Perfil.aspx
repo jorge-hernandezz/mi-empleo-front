@@ -8,6 +8,7 @@
     <link href="src/css/Perfil.css" rel="stylesheet" />
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title></title>
 </head>
@@ -132,7 +133,7 @@
                                 <div class="col-md-2">
                                     <label class="margin2">Localidad</label>
                                 </div>
-                                <div class="col-md-10">
+                                <div class="col-md-10" >
                                     <asp:DropDownList runat="server" ID="DDLugar" CssClass="button text-box2 margin2 foo">
                                         <asp:ListItem Selected="True" Value="Lugar"> Lugar </asp:ListItem>
                                         <asp:ListItem Value="Delicias"> Delicias </asp:ListItem>
@@ -141,6 +142,14 @@
                                         <asp:ListItem Value="Camargo"> Camargo  </asp:ListItem>
                                         <asp:ListItem Value="Rosales"> Rosales  </asp:ListItem>
                                     </asp:DropDownList>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <label class="margin2">Curriculum</label>
+                                </div>
+                                <div class="col-md-10" style="margin-top: 24px !important">
+                                    <asp:FileUpload ID="FileUpload2" runat="server" />
                                 </div>
                             </div>
                             <div class="row">

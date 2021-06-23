@@ -17,7 +17,7 @@
             <div class="container text-color" style="position: relative">
                 <div class="row" style="padding-top: 60px; height: 200px;">
                     <h1 style="color: white;">Mi Empleo</h1>
-                    <div class="col-3">
+                    <%--<div class="col-3">
                         <asp:TextBox runat="server" placeholder="Trabajo, Descripcion" CssClass="button" />
                     </div>
                     <div class="col-3">
@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-5">
                         <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary button2" />
-                    </div>
+                    </div>--%>
                 </div>
             </div>
         </div>

@@ -65,7 +65,11 @@ namespace Mi_Empleo2
                             if (response.IsSuccessStatusCode)
                             {
                                 string responseStringContent = await content.ReadAsStringAsync();
-                                register = Newtonsoft.Json.JsonConvert.DeserializeObject<RegisterResponseModel>(responseStringContent);                                                                
+                                register = Newtonsoft.Json.JsonConvert.DeserializeObject<RegisterResponseModel>(responseStringContent);
+                            }
+                            else
+                            {
+                                ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""¡No se pudo registar el usuario!"", ""error"");</script>");
                             }                            
                         }
                     }
