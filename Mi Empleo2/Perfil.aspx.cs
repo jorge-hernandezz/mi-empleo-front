@@ -140,7 +140,7 @@ namespace Mi_Empleo2
                 if (TBApellido.Text != "" && Regex.Match(TBApellido.Text, @"^[a-zA-ZñÑ]+( [a-zA-ZñÑ]+)?$").Success)
                 {
                     userModel.last_name = TBApellido.Text;
-                    if (TBEmail.Text != "")
+                    if (TBEmail.Text != "" && Regex.Match(TBEmail.Text, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*").Success)
                     {
                         userModel.email = TBEmail.Text;
                         if (TBProfe.Text != "")
@@ -219,13 +219,13 @@ namespace Mi_Empleo2
                                                 }
                                                 else
                                                 {
-                                                    ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información selecione un lugar!"", ""error"");</script>");
+                                                    ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información fallo interno!"", ""error"");</script>");
                                                 }
                                             }                                            
                                         }
                                         else
                                         {
-                                            ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información debe agregar un valor numérico!"", ""error"");</script>");
+                                            ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información selecione un lugar!"", ""error"");</script>");
                                         }
                                     }
                                     else
