@@ -134,29 +134,28 @@ namespace Mi_Empleo2
         protected void upload_Click(object sender, EventArgs e)
         {
             UserModel userModel = new UserModel();
-            if (TBName.Text != "")
+            if (TBName.Text != "" && Regex.Match(TBName.Text, @"^\w+( \w+)?$").Success)
             {
                 userModel.first_name = TBName.Text;
-                if (true)
+                if (TBApellido.Text != "" && Regex.Match(TBApellido.Text, @"^[a-zA-ZñÑ]+( [a-zA-ZñÑ]+)?$").Success)
                 {
                     userModel.last_name = TBApellido.Text;
-                    if (true)
+                    if (TBEmail.Text != "")
                     {
                         userModel.email = TBEmail.Text;
-                        if (true)
+                        if (TBProfe.Text != "")
                         {
                             userModel.profession = TBProfe.Text;
                             if (true)
                             {
                                 userModel.username = LBUser.Text;
-                                if (!Regex.Match(TBName.Text, "").Success)
+                                if (TBPhone.Text != "" && Regex.Match(TBPhone.Text, @"\d{10}").Success)
                                 {
                                     userModel.phone = TBPhone.Text;
-
-                                    if (true)
+                                    if (TBEx.Text != "" && Regex.Match(TBEx.Text, @"\d{1,2}").Success)
                                     {
                                         userModel.experience = TBEx.Text;
-                                        if (true)
+                                        if (DDLugar.Text != "" && DDLugar.Text != "Lugar")
                                         {
                                             userModel.place = DDLugar.Text;
                                             if (FileUpload1.FileName != "")
@@ -220,15 +219,43 @@ namespace Mi_Empleo2
                                                 }
                                                 else
                                                 {
-                                                    ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información!"", ""error"");</script>");
+                                                    ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información selecione un lugar!"", ""error"");</script>");
                                                 }
-                                            }
+                                            }                                            
+                                        }
+                                        else
+                                        {
+                                            ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información debe agregar un valor numérico!"", ""error"");</script>");
                                         }
                                     }
+                                    else
+                                    {
+                                        ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información debe agregar una profesión!"", ""error"");</script>");
+                                    }
+                                }
+                                else
+                                {
+                                    ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información numero incorrecto!"", ""error"");</script>");
                                 }
                             }
-                        }                        
+                            else
+                            {
+
+                            }
+                        }
+                        else
+                        {
+                            ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información debe agregar una profesión!"", ""error"");</script>");
+                        }                    
                     }
+                    else
+                    {
+                        ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información email incorrecto!"", ""error"");</script>");
+                    }
+                }
+                else
+                {
+                    ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""Error al guardar la información son necesarios dos apellidos!"", ""error"");</script>");
                 }
             }
             else

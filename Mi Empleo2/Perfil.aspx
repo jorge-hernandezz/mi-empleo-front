@@ -61,13 +61,13 @@
                 <div class="col-md-4">
                     <div class="profile-work">
                         <p style="font-size: 20px;">Redes</p>
-                        <asp:TextBox Text="text" runat="server" ID="TBSite1" CssClass="text-box foo" />
+                        <asp:TextBox Text="text" placeholder="Linkedin" runat="server" ID="TBSite1" CssClass="text-box foo" />
                         <br />
-                        <asp:TextBox Text="text" runat="server" ID="TBSite2" CssClass="text-box margin foo" />
+                        <asp:TextBox Text="text" placeholder="Twitter" runat="server" ID="TBSite2" CssClass="text-box margin foo" />
                         <br />
-                        <asp:TextBox Text="text" runat="server" ID="TBSite3" CssClass="text-box margin foo" />
+                        <asp:TextBox Text="text" placeholder="FaceBook" runat="server" ID="TBSite3" CssClass="text-box margin foo" />
                         <br />
-                        <asp:TextBox Text="text" runat="server" ID="TBSite4" CssClass="text-box margin foo" />
+                        <asp:TextBox Text="text" placeholder="Otro" runat="server" ID="TBSite4" CssClass="text-box margin foo" />
                         <p style="font-size: 20px;">Habilidades</p>
                         <asp:TextBox Text="text" runat="server" ID="TBSkill1" CssClass="text-box foo" />
                         <br />

@@ -108,9 +108,9 @@
                         <hr />
                         <h3>Encuentrame en mis redes</h3>
                         <ul class="social">
-                            <li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-                            <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-                            <li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                            <li><a href="<%= link%>" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                            <li><a href="<%= twiter%>" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                            <li><a href="<%= face%>" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
                             <!--
 								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
 								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>

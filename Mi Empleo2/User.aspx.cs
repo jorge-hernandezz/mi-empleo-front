@@ -15,7 +15,11 @@ namespace Mi_Empleo2
 {
     public partial class User : System.Web.UI.Page
     {
-        public string cv = ""; 
+        public string cv = "";
+        public string link = "";
+        public string twiter = "";
+        public string face = "";
+
         protected void Page_Load(object sender, EventArgs e)
         {
             var token = Session["token"];
@@ -43,6 +47,11 @@ namespace Mi_Empleo2
                     lbs3.Text = skills.skill3;
                     lbs4.Text = skills.skill4;
                     cv = $@"<a href="" {serviceResult.cv} "" class=""button large scrolly"" download=""CV.pdf"">Descarga CV</a>";
+                    SitesModel sitesModel = new SitesModel();
+                    sitesModel = JsonConvert.DeserializeObject<SitesModel>(serviceResult.sites);
+                    link = sitesModel.site1;
+                    twiter = sitesModel.site2;
+                    face = sitesModel.site3;
                 }
             }
             
