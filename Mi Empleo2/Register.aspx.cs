@@ -26,8 +26,7 @@ namespace Mi_Empleo2
             var result = task.Result;
             if (result.message == "success")
             {
-                Response.Redirect("Login.aspx");
-                ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""¡Registrado correctamente!"", ""success"");</script>");                
+                              
             }
             else
             {
@@ -67,6 +66,8 @@ namespace Mi_Empleo2
                             {
                                 string responseStringContent = await content.ReadAsStringAsync();
                                 register = Newtonsoft.Json.JsonConvert.DeserializeObject<RegisterResponseModel>(responseStringContent);
+                                ClientScript.RegisterStartupScript(GetType(), "Message", @"<SCRIPT LANGUAGE='javascript'>swal(""Fallo!"", ""¡Registrado correctamente!"", ""success"");</script>");
+                                Response.Redirect("Login.aspx");                                
                             }
                             else
                             {
