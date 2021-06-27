@@ -23,6 +23,11 @@ namespace Mi_Empleo2
             {
                 Response.Redirect("Login.aspx");
             }
+            Session["MenuUsers"] = "";
+            Session["DesarrolloUsers"] = "";
+            Session["TecUsers"] = "";
+            Session["MedicinaUsers"] = "";
+            Session["TodosUsers"] = "";
         }
 
         protected void BTNBuscar_Click(object sender, EventArgs e)

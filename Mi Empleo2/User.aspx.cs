@@ -34,8 +34,8 @@ namespace Mi_Empleo2
                 UserModel serviceResult = task.Result;
                 if (!IsPostBack)
                 {
-                    TBNombre.Text = serviceResult.first_name + serviceResult.last_name;
-                    Nombre2.Text = serviceResult.first_name + serviceResult.last_name;
+                    TBNombre.Text = serviceResult.first_name + " " + serviceResult.last_name;
+                    Nombre2.Text = serviceResult.first_name +  " " + serviceResult.last_name;
                     TBCarrera.Text = serviceResult.profession;
                     TBCarrera2.Text = serviceResult.profession;
                     LBExp.Text = serviceResult.experience;

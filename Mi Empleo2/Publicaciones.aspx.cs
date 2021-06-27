@@ -25,38 +25,40 @@ namespace Mi_Empleo2
                 Response.Redirect("Login.aspx");
             }
 
-            if ((string)Session["MenuUsers"] == "0")
+            if (!IsPostBack)
             {
-                listUsers = (List<UsersAllModel>)Session["MenuUsersList"];
-                Session["MenuUsers"] = "";
-            }
-            else if ((string)Session["DesarrolloUsers"] == "1")
-            {
-                string desarrollo = "desarrollo";
-                var task = Task.Run(async () => await getUsersCategory(desarrollo));
-                listUsers = task.Result;
-                Session["DesarrolloUsers"] = "";
-            }
-            else if ((string)Session["TecUsers"] == "2")
-            {
-                string tecnologias = "tecnologias";
-                var task = Task.Run(async () => await getUsersCategory(tecnologias));
-                listUsers = task.Result;
-                Session["TecUsers"] = "";
-            }
-            else if ((string)Session["MedicinaUsers"] == "3")
-            {
-                string medicina = "medicina";
-                var task = Task.Run(async () => await getUsersCategory(medicina));
-                listUsers = task.Result;
-                Session["MedicinaUsers"] = "";
-            }
-            else if ((string)Session["TodosUsers"] == "4")
-            {
-                var task = Task.Run(async () => await getUsers());
-                listUsers = task.Result;
-                Session["TodosUsers"] = "";
-            }
+                if ((string)Session["MenuUsers"] == "0")
+                {
+                    listUsers = (List<UsersAllModel>)Session["MenuUsersList"];
+                    
+                }
+                else if ((string)Session["DesarrolloUsers"] == "1")
+                {
+                    string desarrollo = "desarrollo";
+                    var task = Task.Run(async () => await getUsersCategory(desarrollo));
+                    listUsers = task.Result;
+                    
+                }
+                else if ((string)Session["TecUsers"] == "2")
+                {
+                    string tecnologias = "tecnologias";
+                    var task = Task.Run(async () => await getUsersCategory(tecnologias));
+                    listUsers = task.Result;
+                    
+                }
+                else if ((string)Session["MedicinaUsers"] == "3")
+                {
+                    string medicina = "medicina";
+                    var task = Task.Run(async () => await getUsersCategory(medicina));
+                    listUsers = task.Result;
+                    
+                }
+                else if ((string)Session["TodosUsers"] == "4")
+                {
+                    var task = Task.Run(async () => await getUsers());
+                    listUsers = task.Result;                    
+                }
+            }            
         }
 
         public async Task<List<UsersAllModel>> getUsers()

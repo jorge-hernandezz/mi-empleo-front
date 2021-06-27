@@ -11,7 +11,11 @@ namespace Mi_Empleo2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            var token = Session["token"];
+            if (token == null)
+            {
+                Response.Redirect("Login.aspx");
+            }
         }
     }
 }

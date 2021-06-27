@@ -12,10 +12,29 @@
     <title></title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-left: 15px;">
+        <a class="navbar-brand" href="#">Mi Empleo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="MainMenu.aspx">Inicio </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Perfil.aspx">Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Ayuda.aspx">Ayuda</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
     <form id="form1" runat="server">
         <div class="fondo" style="border-bottom-left-radius: 100px; border-bottom-right-radius: 100px;">
             <div class="container text-color" style="position: relative">
-                <div class="row" style="padding-top: 60px; height: 200px;">
+                <div class="row" style="padding-top: 60px; height: 140px;">
                     <h1 style="color: white;">Mi Empleo</h1>
                     <%--<div class="col-3">
                         <asp:TextBox runat="server" placeholder="Trabajo, Descripcion" CssClass="button" />
@@ -43,7 +62,6 @@
         <div class="courses-container">
             <div class="course">
                 <div class="course-preview">
-                    <h6>Ingeniero</h6>
                     <h2><%= x.first_name%> <%= x.last_name%></h2>
                 </div>
                 <div class="course-info">
