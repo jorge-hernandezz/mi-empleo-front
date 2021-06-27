@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainMenu.aspx.cs" Inherits="Mi_Empleo2.MainMenu" EnableEventValidation="false"%>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MainMenu.aspx.cs" Inherits="Mi_Empleo2.MainMenu" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -25,11 +25,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Perfil.aspx">Perfil</a>
                     </li>
-                    <li class="nav-item">   
+                    <li class="nav-item">
                         <a class="nav-link" href="Ayuda.aspx">Ayuda</a>
                     </li>                    
                 </ul>
             </div>
+            <asp:LinkButton Text="" OnClick="Unnamed_Click" CssClass="nav-link" runat="server">
+                   <i class="fas fa-sign-out-alt" style="font-size: 25px; color: #ffffff8c"></i>
+            </asp:LinkButton>
         </nav>
         <div class="imgPrin">
             <div class="sombreado"></div>
@@ -38,7 +41,7 @@
                     <h1 style="color: white;">Mi Empleo</h1>
                     <p class="text-chido">Busca trabajo, empleate y oportunidades</p>
                     <div class="col-3">
-                        <asp:TextBox runat="server" placeholder="Trabajo, Descripcion" CssClass="button" ID="TBDesc"/>
+                        <asp:TextBox runat="server" placeholder="Trabajo, Descripcion" CssClass="button" ID="TBDesc" />
                     </div>
 
                     <div class="col-3">
@@ -62,13 +65,13 @@
 
                     </div>
                     <div class="col-3">
-                        <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary button2" ID="BTNBuscar" OnClick="BTNBuscar_Click"/>
-                    </div>                    
+                        <asp:Button Text="Buscar" runat="server" CssClass="btn btn-primary button2" ID="BTNBuscar" OnClick="BTNBuscar_Click" />
+                    </div>
                     <div id="carro" style="padding-top: 180px;">
-                        <div class="text-center" style="padding-bottom:20px;">
-                            <asp:Label Text="Trabajos que pueden interesarte" runat="server" CssClass="text-chido"/>
-                        </div>                        
-                        <div class="container">                            
+                        <div class="text-center" style="padding-bottom: 20px;">
+                            <asp:Label Text="Trabajos que pueden interesarte" runat="server" CssClass="text-chido" />
+                        </div>
+                        <div class="container">
                             <asp:LinkButton runat="server" ID="btndes" OnClick="btndes_Click" class="card">
                                 <h3 class="title">Desarrollo</h3>
                                 <div class="bar">
@@ -99,7 +102,7 @@
                                     <i class="fas fa-notes-medical fa-7x"></i>
                                 </div>
                             </asp:LinkButton>
-                            <asp:LinkButton runat="server" ID="btnall" OnClick="btnall_Click" class="card" >
+                            <asp:LinkButton runat="server" ID="btnall" OnClick="btnall_Click" class="card">
                                 <h3 class="title">Todos los Trabajos</h3>
                                 <div class="bar">
                                     <div class="emptybar"></div>

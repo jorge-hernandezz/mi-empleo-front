@@ -125,5 +125,47 @@ namespace Mi_Empleo2
             Session["MedicinaUsers"] = "3";
             Response.Redirect("Publicaciones.aspx");
         }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            var task = Task.Run(async () => await loged());
+            bool status = task.Result;
+            if (status)
+            {
+                Session["token"] = null;
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        public async Task<bool> loged()
+        {
+            bool status = false; 
+            var token = Session["token"];          
+            string uri = ConfigurationManager.AppSettings["production"] + "users/logout/";
+            HttpClient httpClient = new HttpClient();
+            try
+            {
+                using (HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, uri))
+                {                    
+                    request.Headers.Add("Authorization", "Token " + token);
+                    using (HttpResponseMessage response = await httpClient.SendAsync(request))
+                    {
+                        using (HttpContent content = response.Content)
+                        {
+                            if (response.IsSuccessStatusCode)
+                            {
+                                string responseStringContent = await content.ReadAsStringAsync();
+                                status = true;
+                            }
+                        }
+                    }
+                }
+            }
+            catch (WebException ex)
+            {
+                Console.WriteLine(ex);
+            }
+            return status;
+        }
     }
 }
