@@ -137,7 +137,7 @@ namespace Mi_Empleo2
             if (TBName.Text != "" && Regex.Match(TBName.Text, @"^\w+( \w+)?$").Success)
             {
                 userModel.first_name = TBName.Text;
-                if (TBApellido.Text != "" && Regex.Match(TBApellido.Text, @"^[a-zA-ZñÑ]+( [a-zA-ZñÑ]+)?$").Success)
+                if (TBApellido.Text != "" && Regex.Match(TBApellido.Text, @"^[a-zA-ZñÑáéíóú]+( [a-zA-ZñÑáéíóú]+)?$").Success)
                 {
                     userModel.last_name = TBApellido.Text;
                     if (TBEmail.Text != "" && Regex.Match(TBEmail.Text, "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*").Success)
